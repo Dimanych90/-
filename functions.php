@@ -4,70 +4,62 @@ function task1(array $names, $print = true)
 {
     foreach ($names as $value) {
         echo '<p>' . $value . '<p>' . '<br>';
-    }if ($print == true){
-    echo implode($names);
+    }
+    if ($print == true) {
+        echo implode($names);
+    }
 }
-}
-    $names = ['man' => 'Vasya',
-        'woman' => 'Dasha',
-        'it' => 'cat'];
+
+$names = ['man' => 'Vasya',
+    'woman' => 'Dasha',
+    'it' => 'cat'];
 
 print_r(task1($names));
 
-echo '<br>';
-echo '<hr>';
 
-function task2()
+function task2($operator, ...$numbers)
 {
-$somevalue = '';
-$str = 0;
-foreach (func_get_args() as $arg){
-    if (!is_int($arg)){
-        $somevalue = $arg;
-    }else{
-        switch ($somevalue){
+    $str = 0;
+    $expression = implode($operator, $numbers);
+    foreach ($numbers as $number) {
+        switch ($operator) {
             case '+':
-                $str += $arg;
+                $str += $number;
                 break;
             case '-':
-            $str -= $arg;
+                $str -= $number;
                 break;
             case '*':
-            $str *= $arg;
-              if ($str == 0){
-                  $str = $arg;
-              } else{
-                  $str *= $arg;
-              }  break;
-            case '/':
-                if ($str == 0){
-                    $str = $arg;
-                } elseif ($str /=0){
-                    echo 'Это ошибка, на ноль делить нельзя';
+                $str *= $number;
+                if ($str == 0) {
+                    $str = $number;
+                } else {
+                    $str *= $number;
                 }
-                else{
-                    $str /= $arg;
-                }   break;
+                break;
+            case '/':
+                if ($str == 0) {
+                    $str = $number;
+                } elseif ($str /= 0) {
+                    echo 'Это ошибка, на ноль делить нельзя';
+                } else {
+                    $str /= $number;
+                }
+                break;
         }
-        }
-
-
     }
-
-    echo $str;
+    echo $expression . ' = ' . $str;
 }
-    task2('+',1,4,5,4,8,9,5,1);
-echo '<br>';
-echo '<hr>';
 
 
 function task3($num1, $num2)
-{ echo '<table border="1">';
+{
+    echo '<table border="1">';
 
 
     for ($tr = 0; $tr <= $num1; $tr++) {
 
-        echo '<tr><td>'. $tr .'</td>';
+        echo '<tr><td>' . $tr . '</td>';
         for ($td = 1; $td <= $num2; $td++) {
             if ($tr > 1) {
                 $result = $td * $tr;
@@ -77,7 +69,7 @@ function task3($num1, $num2)
                     echo '<td>' . $result . '</td>';
                 } else
                     echo 'Так нельзя';
-            }else{
+            } else {
                 echo '<td>' . $td . '</td>';
             }
         }
@@ -88,34 +80,40 @@ function task3($num1, $num2)
 }
 
 
-
 echo '<br>';
 echo '<hr>';
 
-function task4(){
+function task4()
+{
 
 }
 
-function task5(){
+function task5()
+{
 
 }
 
-function task6(){
+function task6()
+{
 
 }
 
-function task7(){
+function task7()
+{
 
 }
 
-function task8(){
+function task8()
+{
 
 }
 
-function task9(){
+function task9()
+{
 
 }
 
-function task10(){
+function task10()
+{
 
 }

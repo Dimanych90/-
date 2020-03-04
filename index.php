@@ -14,12 +14,17 @@ echo 'Наша строка = ' . ' '. $string;
 
 */
 
-require ('functions.php');
+require 'functions.php';
 
 
 print_r(task1([]));
 
-echo $str;
+
+task2('+', 1, 4, 5, 4, 8);
+
+
+echo '<br>';
+echo '<hr>';
 
 echo task3(8, 8);
 
